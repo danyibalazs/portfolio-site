@@ -16,13 +16,13 @@ html, body {
   scroll-behavior: smooth; 
 }
 
-body *{
+/* body *{
 	transition: 0.3s;
 }
 
 header {
   overflow: auto;
-}
+} */
 
 .main-container{
 	max-width: 1600px;
@@ -31,7 +31,7 @@ header {
 
 .background-image {
   height: 600px;
-  min-height: 300px;
+  /* min-height: 300px; */
   width: 100%;
   background-image: url(images/header.png);
   background-size: 100% auto;
@@ -39,13 +39,27 @@ header {
   background-repeat: no-repeat;
  }
 
- h1 {
+ h1, h2, p {
    color: var(--whiteTextColor);
    font-family: var(--font);
-   font-weight: 700;
-   font-size: 55px;
  }
 
+ h1 {
+  font-weight: 900;
+  font-size: 55px;
+ }
+
+ h2 {
+   font-weight: 700;
+   font-size: 35px;
+   text-transform: uppercase;
+ }
+
+ p {
+   font-weight: 400;
+   font-size: 23px;
+ }
+ 
  .greeting-wrapper{
 	display: grid;
 	text-align: center;
@@ -53,4 +67,19 @@ header {
 	min-height: 10em;
 }
 
+.intro-wrapper {
+
+  display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 
+		'. right-column'
+	;       
+}
+
+.right-column{
+	grid-area: right-column;
+	display: grid;
+  width: 50%;
+  margin-top: 50px;
+}
 
