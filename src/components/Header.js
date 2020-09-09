@@ -1,5 +1,7 @@
 import React from 'react';
 
+import profilePic from '../images/profilePic.png';
+
 const Header = () => {
   return (
     <header>
@@ -10,11 +12,13 @@ const Header = () => {
           </div>
 
           <div className="intro-wrapper">
+            <div className="left-column">
+              <img id="profile-pic" src={profilePic} />
+            </div>
             <div className="right-column">
-              <h2>Who I am</h2>
+              <h2 id="short-title">Who I am</h2>
               <p>
-                I am a career entrant Web Developer,
-                focusing on JavaScript related technologies.
+                I am a career entrant Web Developer, focusing on JavaScript related technologies.
               </p>
             </div>
           </div>

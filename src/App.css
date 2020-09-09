@@ -18,11 +18,11 @@ html, body {
 
 /* body *{
 	transition: 0.3s;
-}
+} */
 
 header {
   overflow: auto;
-} */
+} 
 
 .main-container{
 	max-width: 1600px;
@@ -30,11 +30,11 @@ header {
 }
 
 .background-image {
-  height: 600px;
+  /* min-height: 600px; */
   /* min-height: 300px; */
   width: 100%;
   background-image: url(images/header.png);
-  background-size: 100% auto;
+  background-size: 100% 100%;
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
  }
@@ -64,22 +64,76 @@ header {
 	display: grid;
 	text-align: center;
 	align-content: center;
-	min-height: 10em;
+	/* min-height: 10em; */
 }
 
 .intro-wrapper {
-
   display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
-		'. right-column'
-	;       
+		'left-column right-column'
+  ;
+}
+
+.left-column {
+  grid-area: left-column;
+  display: flex;
+  justify-content: center;
 }
 
 .right-column{
-	grid-area: right-column;
-	display: grid;
-  width: 50%;
-  margin-top: 50px;
+  grid-area: right-column;
+  display: grid;
+  align-content: center;
+  padding: 10px;
+}
+
+/* #short-title {
+  margin: 0;
+} */
+
+@media screen and (max-width: 768px) {
+  .intro-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'left-column' 
+      'right-column'
+    ;
+  }
+
+  .right-column {
+    justify-items: center;
+  }
+
+  .right-column p {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  #profile-pic {
+    display: block;
+	  margin:0 auto;
+
+	  height: 300px;
+	  width: 300px;
+	  object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 35px;
+  }
 }
 
