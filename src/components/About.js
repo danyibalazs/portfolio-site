@@ -12,25 +12,24 @@ const About = () => {
             </p>
           </div>
           <div className="expertise-column">
-            <h3>My Expertise</h3>
-            <p className="about-p">
-            Junior Web Developer with primary focus on JavaScript and React
-            </p>
+            <h3>My Skills</h3>
             <div id="terminal">
-              <ul>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-              </ul>
-              <ul>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-                <li>JavaScript</li>
-              </ul>
+              <div id="skills-wrapper">
+                <div>
+                  <ul>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>HTML/CSS</li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li>MongoDB</li>
+                    <li>Express</li>
+                  </ul>
+                </div>  
+              </div>
+             
             </div>
           </div>
         </div>
