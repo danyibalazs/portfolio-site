@@ -7,6 +7,8 @@
   --whiteBackground: #F4F4F4;
   --greyBackground: #ECEAEA;
 
+  --borderColor:#c1c1c1;
+
   --font: 'Roboto Slab', serif;
 }
 
@@ -24,10 +26,14 @@ html, body {
   overflow: auto;
 }  */
 
+/* Main */
+
 .main-container{
 	max-width: 1600px;
   margin: 0 auto;
 }
+
+/* Header */
 
 .background-image {
   width: 100%;
@@ -92,6 +98,8 @@ html, body {
   padding: 10px;
 }
 
+/* About */
+
 .about-wrapper {
   background-color: var(--whiteBackground);
   display: grid;
@@ -142,10 +150,17 @@ li {
   margin: 0;
 }
 
+h4 {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 .projects-wrapper {
   background-color: var(--greyBackground);
-  /* display: grid;
-	grid-template-columns: repeat(auto-fit, 387px); */
   gap:20px;
   display: flex;
   flex-wrap: wrap;
@@ -153,35 +168,49 @@ li {
 	padding-bottom: 50px;
 }
 
-.post{
+.project {
   max-width: 387px;
 	border:1px solid var(--borderColor);
 	-webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
 	-moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
-	box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+  box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
 }
 
 .thumbnail{
   display: block;
 	width: 387px;
 	height: 220px;
-	object-fit: cover;
+  object-fit: cover;
 }
 
-.post-preview{
-	background-color: #fff;
-	padding:15px;
+.project-preview{
+	background-color: var(--whiteBackground);
+  padding:15px;
+  min-height: 200px;
 }
 
-.post-title{
-	color:black;
-	margin: 0;
+.project-intro{
+	font-size: 16px;
 }
 
-.post-intro{
-	color:#4b5156;
-	font-size: 14px;
+.link-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
+
+a {
+  font-family: var(--font);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--buttonColor);
+  font-weight: 500;
+  font-size: 16px
+}
+
+a:hover {
+  color: dodgerblue;
+}
+
 
 @media screen and (max-width: 1047px) {
   .about-wrapper {
@@ -207,7 +236,7 @@ li {
     text-align: center;
   }
 
-  h1 { font-size: 45px; }
+  h1 { font-size: 40px; }
   h2 { font-size: 25px; }
   p  { font-size: 18px; }
 
@@ -236,18 +265,20 @@ li {
 }
 
 @media screen and (max-width: 480px) {
-  h1 { font-size: 30px; }
+  h1 { font-size: 28px; }
   h2 { font-size: 20px; }
   p  { font-size: 15px; }
   li { font-size: 15px; }
   .about-p { font-size: 15px; }
   h3 { font-size: 20px; }
+  h4 { font-size: 17px; }
+
 
   #skills-wrapper {
     padding-top: 0;
   }
 
-  .post {
+  .project {
     max-width: 300px;
     width: 100%;
     height: auto;
@@ -255,8 +286,8 @@ li {
 
   .thumbnail{
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 180px;
     object-fit: cover;
   }
 }
