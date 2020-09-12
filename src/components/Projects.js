@@ -10,8 +10,7 @@ const Projects = () => {
       <div className="main-container">
         <h3 id="projects-header" >Some of my projects</h3>
         <div className="projects-wrapper">
-
-       
+ 
         <div>
 					<div className="project">
 						<img className="thumbnail" src={project1Pic} alt="Project Thumbnail" />
@@ -32,8 +31,7 @@ const Projects = () => {
                   href="https://github.com/danyibalazs/recipe_app" 
                   target="_blank"
                   rel="noopener noreferrer">Github</a>
-              </div>
-							
+              </div>			
 						</div>
 					</div>
 				</div>
@@ -81,7 +79,6 @@ const Projects = () => {
 						</div>
 					</div>
 				</div>
-          
           
         </div> 
       </div>
