@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import emailjs from 'emailjs-com';
 import axios from 'axios';
 
 const Footer = () => {
@@ -9,11 +8,19 @@ const Footer = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  // const [disabled, setDisabled] = useState(false);
   const [emailSent, setEmailSent] = useState(null);
+
+  const resetForm = () => {
+    setName('');
+    setSubject('');
+    setEmail('');
+    setMessage('');
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    setEmailSent('sending');
 
     const data = {
       name,
@@ -22,15 +29,25 @@ const Footer = () => {
       message
     }
 
-    axios.post('/api/email', data)
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-
-    e.target.reset();
+    // axios.post('/api/email', data)
+    //   .then((res) => {
+    //     console.log(res.data); 
+        
+    //     if (res.data === 'success') {
+    //       setEmailSent('success');
+    //       resetForm();
+    //     } else {
+    //       setEmailSent('failure');
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     setEmailSent('failure');
+    //     console.log(err.message)
+    //   }); 
+    
+    setTimeout(() => {
+      setEmailSent('');
+    }, 3000);
   }
 
   return (
@@ -44,7 +61,7 @@ const Footer = () => {
                 className="input-field" 
                 type="text" 
                 placeholder="Name" 
-                required
+                // required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -52,7 +69,7 @@ const Footer = () => {
                 className="input-field" 
                 type="text" 
                 placeholder="Subject" 
-                required
+                // required
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
@@ -60,23 +77,45 @@ const Footer = () => {
                 className="input-field" 
                 type="email" 
                 placeholder="Email" 
-                required
+                // required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <textarea 
                 className="input-field" 
                 placeholder="Message" 
-                required
+                // required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
+              { !emailSent && 
               <button id="submit-btn" type="submit">Send</button>
+              }
+              <div>
+                { emailSent === 'sending' &&
+                    <p  className="email-message">
+                      Sending...
+                    </p>
+                  } 
+                { emailSent === 'success' && 
+                    <p 
+                      className="email-message" 
+                      style={{color: '#5cb85c'}}
+                    >
+                      Email sent successfully!
+                    </p>
+                  }
+                { emailSent === 'failure' && 
+                    <p
+                      className="email-message"
+                      style={{color: '#d9534f'}}
+                    >
+                      Something went wrong!
+                    </p>
+                  }
+              </div>
             </form>
           </div> 
-          <div className="message-area">
-             {/* <p>Email Sent</p> */}
-          </div>
         </div>
       </div>
 

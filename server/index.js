@@ -18,8 +18,8 @@ app.post('/api/email', async (req, res) => {
   
   const { name, subject, email, message } = req.body;
 
-  if (name || subject || email || message) {
-    return res.json('Please fill out all the fields!');
+  if (!name || !subject || !email || !message) {
+    return res.json('empty');
   }
     
   const data = {

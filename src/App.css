@@ -221,18 +221,13 @@ a:hover {
   display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 
-		'form-area message-area'
+		'form-area .'
   ;
   justify-items: center;
 }
 
 .form-area {
   grid-area: form-area;
-}
-
-.message-area {
-  grid-area: message-area;
-  justify-items: left;
 }
 
 #form-title {
@@ -288,6 +283,13 @@ textarea {
   text-transform: uppercase;
 }
 
+.email-message {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
 @media screen and (max-width: 1200px) {
   .footer-wrapper {
     width: 100%;
@@ -298,15 +300,19 @@ textarea {
     grid-template-columns: 1fr;
     grid-template-areas: 
       'form-area'
-      'message-area'
     ;
     justify-items: center;
+  }
+
+  #contact-form {
+    padding-bottom: 0px;
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 1047px) {
   .about-wrapper {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
   }
 }
 
@@ -348,7 +354,7 @@ textarea {
       'more-column' 
       'expertise-column'
     ;
-    padding: 0 40px 20px 40px;
+    padding: 0 40px 40px 40px;
   }
 
   #terminal {

@@ -8,7 +8,10 @@ const About = () => {
           <div className="more-column">
             <h3>More about me</h3>
             <p className="about-p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed felis pulvinar, pharetra ipsum vitae, dapibus nunc. Praesent vel interdum risus. Quisque non magna vitae arcu laoreet mattis in tincidunt diam. Mauris ut ante justo. Mauris vulputate nulla consequat interdum varius.
+            I am a highly motivated Junior Web Developer with a background in Engineering.
+            In previous roles, I developed a strong interest in programming and creating new solutions to complex issues.
+            After honing my skills through additional training,
+            I am looking forward to putting them to good use in the Tech Industry. 
             </p>
           </div>
           <div className="expertise-column">
