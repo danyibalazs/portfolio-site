@@ -8,13 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../build"));
+app.use(express.static("build"));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "..", "build", "index.html"));
-  });
-}
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+});
+
 
 app.post("/api/email", async (req, res) => {
   const { name, subject, email, message } = req.body;
