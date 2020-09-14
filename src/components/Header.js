@@ -16,8 +16,8 @@ const Header = () => {
             </div>
             <div className="right-column">
               <h2 >What I do</h2>
-              <p>
-                I am a career entrant Web Developer<br/> focusing on JavaScript related technologies
+              <p id="header-p">
+                I am a Junior Web Developer focusing on JavaScript related technologies.
               </p>
             </div>
           </div>

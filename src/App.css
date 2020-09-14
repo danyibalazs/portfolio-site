@@ -48,7 +48,7 @@ html, body {
  }
 
  h1 {
-  font-weight: 900;
+  font-weight: 800;
   font-size: 55px;
  }
 
@@ -56,6 +56,7 @@ html, body {
    font-weight: 600;
    font-size: 35px;
    text-transform: uppercase;
+   margin-bottom: 23px;
  }
 
  h3 {
@@ -64,11 +65,22 @@ html, body {
    font-weight: 600;
    font-size: 28px;
    text-transform: uppercase;
+   margin-top: 37px;
+ }
+
+ #skills-h3 {
+   margin-bottom: 37px;
  }
 
  p {
    font-weight: 400;
    font-size: 23px;
+ }
+
+ #header-p {
+   margin-top: 0;
+   width: 80%;
+   line-height: 30px;
  }
  
  .greeting-wrapper{
@@ -113,6 +125,7 @@ html, body {
   font-size: 20px;
   font-weight: 400;
   line-height: 30px;
+  margin-bottom: 37px;
 }
 
 #terminal {
@@ -145,7 +158,7 @@ li {
 
 #projects-header {
   background-color: var(--greyBackground);
-  padding: 30px;
+  padding: 37px;
   text-align: center;
   margin: 0;
 }
@@ -190,7 +203,9 @@ h4 {
 }
 
 .project-intro{
-	font-size: 16px;
+  font-size: 16px;
+  margin-top: 8px;
+  line-height: 28px;
 }
 
 .link-wrapper {
@@ -232,7 +247,7 @@ a:hover {
 
 #form-title {
   margin: 0;
-  padding: 28px;
+  padding: 37px;
   color: var(--whiteTextColor);
   text-align: center;
 }
@@ -306,13 +321,21 @@ textarea {
 
   #contact-form {
     padding-bottom: 0px;
-    margin-bottom: 20px;
+    margin-bottom: 37px;
   }
 }
 
 @media screen and (max-width: 1047px) {
   .about-wrapper {
     padding-bottom: 40px;
+  }
+
+  .about-p {
+    margin-bottom: 0;
+  }
+
+  .project-intro {
+    margin-bottom: 20px;
   }
 }
 
@@ -335,9 +358,9 @@ textarea {
   }
 
   h1 { font-size: 40px; }
-  h2 { font-size: 25px; }
-  p  { font-size: 18px; }
-
+  h2, h3 { font-size: 25px; }
+  p, .about-p, li  { font-size: 18px; }
+ 
   #profile-pic {
     display: block;
 	  margin: 0 auto;
@@ -387,6 +410,10 @@ textarea {
     width: 300px;
     height: 180px;
     object-fit: cover;
+  }
+
+  .input-field {
+    font-size: 15px;
   }
 }
 

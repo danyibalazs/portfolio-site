@@ -15,7 +15,7 @@ const About = () => {
             </p>
           </div>
           <div className="expertise-column">
-            <h3>My Skills</h3>
+            <h3 id="skills-h3">My Skills</h3>
             <div id="terminal">
               <div id="skills-wrapper">
                 <div>

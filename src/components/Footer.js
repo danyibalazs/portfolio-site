@@ -17,6 +17,12 @@ const Footer = () => {
     setMessage('');
   }
 
+  const resetButton = () => {
+    setTimeout(() => {
+      setEmailSent('');
+    }, 3000);
+  }
+
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -29,25 +35,24 @@ const Footer = () => {
       message
     }
 
-    // axios.post('/api/email', data)
-    //   .then((res) => {
-    //     console.log(res.data); 
+    axios.post('/api/email', data)
+      .then((res) => {
+        console.log(res.data); 
         
-    //     if (res.data === 'success') {
-    //       setEmailSent('success');
-    //       resetForm();
-    //     } else {
-    //       setEmailSent('failure');
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     setEmailSent('failure');
-    //     console.log(err.message)
-    //   }); 
-    
-    setTimeout(() => {
-      setEmailSent('');
-    }, 3000);
+        if (res.data === 'success') {
+          setEmailSent('success');
+          resetForm();
+          resetButton();
+
+        } else {
+          setEmailSent('failure');
+          resetButton();
+        }
+      })
+      .catch((err) => {
+        setEmailSent('failure');
+        console.log(err.message)
+      }); 
   }
 
   return (
@@ -61,7 +66,7 @@ const Footer = () => {
                 className="input-field" 
                 type="text" 
                 placeholder="Name" 
-                // required
+                required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -69,7 +74,7 @@ const Footer = () => {
                 className="input-field" 
                 type="text" 
                 placeholder="Subject" 
-                // required
+                required
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
               />
@@ -77,14 +82,14 @@ const Footer = () => {
                 className="input-field" 
                 type="email" 
                 placeholder="Email" 
-                // required
+                required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
               <textarea 
                 className="input-field" 
                 placeholder="Message" 
-                // required
+                required
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
