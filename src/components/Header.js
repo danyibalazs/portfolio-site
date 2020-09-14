@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import profilePic from '../images/profilePic.png';
+import profilePic from "../images/profilePic.png";
 
 const Header = () => {
   return (
@@ -15,19 +15,17 @@ const Header = () => {
               <img id="profile-pic" src={profilePic} alt="Profile" />
             </div>
             <div className="right-column">
-              <h2 >What I do</h2>
+              <h2>What I do</h2>
               <p id="header-p">
-                I am a Junior Web Developer focusing on JavaScript related technologies.
+                I am a Junior Web Developer focusing on JavaScript related
+                technologies.
               </p>
             </div>
           </div>
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;
-
-
-
